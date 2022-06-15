@@ -2,15 +2,14 @@
 
 set -e
 
-
-#docker service create --name registry --publish published=5000,target=5000 registry:2
+CURR=$(dirname "${BASH_SOURCE[0]}")
 
 export REGISTRY=localhost:5000/
 export FRONTEND_HOST=http://127.0.0.1:9871
 
 docker swarm init
 
-docker stack deploy -c docker-compose.yml btrix --resolve-image changed
+$CURR/../scripts/run-swarm.sh
 
 sleepfor=5
 
