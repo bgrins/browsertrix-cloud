@@ -12,6 +12,9 @@ services:
     security_opt:
       - "label=disable"
 
+    secrets:
+      - btrix_shared_job_config.yaml
+ 
     environment:
       - RUNTIME=podman
       - SOCKET_SRC=${XDG_RUNTIME_DIR-/run}/podman/podman.sock
@@ -34,5 +37,9 @@ services:
     image: docker.io/minio/minio
     #hostname: minio
     restart: always
+
+secrets:
+  btrix_shared_job_config.yaml:
+    external: true
 
 

@@ -5,8 +5,8 @@ services:
     build: ./backend
     image: ${REGISTRY}webrecorder/browsertrix-backend:latest
 
-    secrets:
-      - shared_job_config.yaml
+      #secrets:
+      #- shared_job_config.yaml
 
     env_file:
       - ./configs/config.env
@@ -18,7 +18,7 @@ services:
     environment:
       - CRAWLER_FQDN_SUFFIX=
       - JOB_IMAGE=${REGISTRY}webrecorder/browsertrix-backend:latest
-      - SHARED_JOB_CONFIG=shared_job_config.yaml
+      - SHARED_JOB_CONFIG=btrix_shared_job_config.yaml
 
   frontend:
     build: ./frontend
@@ -69,6 +69,6 @@ networks:
   default:
     name: btrix-net
 
-secrets:
-  shared_job_config.yaml:
-    file: ./configs/config.yaml
+      #secrets:
+  #shared_job_config.yaml:
+  #  file: ./configs/config.yaml
