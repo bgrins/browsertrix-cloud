@@ -43,9 +43,6 @@ services:
 
       JOB_ID: "{{ id }}"
       STACK_PREFIX: "crawl-"
-      STORE_PATH: "{{ storage_path }}"
-      STORAGE_NAME: "{{ storage_name }}"
-      PROFILE_PATH: "{{ profile_path }}"
 
       MONGO_DB_URL: "{{ mongo_db_url }}"
 

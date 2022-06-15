@@ -11,6 +11,9 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
 
+    secrets:
+      - btrix_shared_job_config.yaml
+
     deploy:
       placement:
         constraints:
@@ -47,3 +50,8 @@ services:
         - "swarm.cronjob.skip-running=false"
       restart_policy:
         condition: none
+
+secrets:
+  btrix_shared_job_config.yaml:
+    file: ./configs/config.yaml
+    name: btrix_shared_job_config.yaml

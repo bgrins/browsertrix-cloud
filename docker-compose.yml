@@ -5,9 +5,6 @@ services:
     build: ./backend
     image: ${REGISTRY}webrecorder/browsertrix-backend:latest
 
-      #secrets:
-      #- shared_job_config.yaml
-
     env_file:
       - ./configs/config.env
 
@@ -69,6 +66,3 @@ networks:
   default:
     name: btrix-net
 
-      #secrets:
-  #shared_job_config.yaml:
-  #  file: ./configs/config.yaml
